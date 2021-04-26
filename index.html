@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>Bot Animation</title>
+
+    <!--  --------- IMPORTED LIBRARIES  ------>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <a-sky color="#EBEBEB"></a-sky>
+
+      <!-- antenna -->
+      <a-circle
+        position="0 9.15 0"
+        color="orange"
+        radius="0.8"
+        material="side: double"
+      >
+      </a-circle>
+      <a-cylinder
+        color="#757575"
+        height="1.5"
+        radius="0.05"
+        position="0 11 0"
+        animation="property: position; from:-0.2 10.4 -0.1;to: 0.2 10.4 -0.1;dir:alternate;loop: true; dur: 1000;"
+      ></a-cylinder>
+      <a-sphere
+        color="#ef5350"
+        radius="0.3"
+        position="0 11 0"
+        animation="property: position; from:-0.2 11 -0.1;to: 0.2 11 -0.1;dir:alternate;loop: true; dur: 1000;"
+      ></a-sphere>
+      <!-- Head -->
+      <a-box
+        id="head"
+        color="#0276aa"
+        position="0 8 0"
+        width="3.2"
+        height="2.2"
+      >
+      </a-box>
+
+      <!-- Eyes -->
+
+      <a-sphere
+        color="#fff"
+        position="-0.63 8.3 0.2"
+        radius="0.6"
+        rotation="0 10 0"
+      >
+      </a-sphere>
+
+      <a-sphere
+        color="#000"
+        radius="0.15"
+        position="-0.63 8.1 0.9"
+        animation="property: position; from:-0.63 8.1 0.9;to: -0.63 8.3 0.9;dir:alternate;loop: true; dur: 1000;"
+      ></a-sphere>
+
+      <a-sphere
+        color="#fff"
+        position="0.63 8.3 0.2"
+        radius="0.6"
+        rotation="0 -10 0"
+      >
+      </a-sphere>
+      <a-sphere
+        color="#000"
+        radius="0.15"
+        position="0.63 8.1 0.9"
+        animation="property: position; from:0.63 8.1 0.9;to: 0.63 8.3 0.9;dir:alternate;loop: true; dur: 1000;"
+      ></a-sphere>
+      
+      <!-- Mouth -->
+      <a-entity
+        position="0 8.2 0.55"
+        rotation="0 0 120"
+        geometry="primitive: ring; thetaStart:100;thetaLength:100;radiusOuter: 1; radiusInner: 0.9;"
+        material="side:double;color:orange;"
+      ></a-entity>
+
+
+      <!--  --------- CAMERA --------- -->
+
+      <a-camera look-controls-enabled wasd-controls-enabled position="0 5 15">
+      </a-camera>
+    </a-scene>
+    <!-- Closing scene -->
+  </body>
+</html>
